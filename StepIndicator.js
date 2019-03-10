@@ -271,11 +271,12 @@ export default class StepIndicator extends Component {
     }
 
     getStepStatus = (stepPosition) => {
-      const { currentPosition, allDone } = this.props;
+      const { currentPosition, numberDone } = this.props;
+      const finishedStepsCount = numberDone || currentPosition
       if(stepPosition === currentPosition) {
         return STEP_STATUS.CURRENT;
       }
-      else if(stepPosition < currentPosition  ||  allDone) {
+      else if(stepPosition < currentPosition  ||  finishedStepsCount) {
         return STEP_STATUS.FINISHED;
       }
       else {
