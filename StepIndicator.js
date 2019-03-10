@@ -169,7 +169,7 @@ export default class StepIndicator extends Component {
                    {this.renderStep(position)}
                  </View>
 
-      if (status === STEP_STATUS.UNFINISHED  &&  noActionOnUnfinished)
+      if (status !== STEP_STATUS.FINISHED  &&  noActionOnUnfinished)
         steps.push(step)
       else {
         steps.push(
