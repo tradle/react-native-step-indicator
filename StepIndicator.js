@@ -276,7 +276,7 @@ export default class StepIndicator extends Component {
       if(stepPosition === currentPosition) {
         return STEP_STATUS.CURRENT;
       }
-      else if(stepPosition < currentPosition  ||  finishedStepsCount) {
+      else if(stepPosition < currentPosition  ||  finishedStepsCount < currentPosition) {
         return STEP_STATUS.FINISHED;
       }
       else {
